@@ -4,6 +4,6 @@ WORKDIR /WorkFlowTestRepo
 # Copy everything
 COPY ["TestConsole/TestConsole.csproj", ""]
 # Restore
-RUN dotnet restore "TestConsole/TestConsole.csproj"
+RUN dotnet restore "./TestConsole/TestConsole.csproj"
 # Build
-RUN dotnet build "TestConsole/TestConsole.csproj"
+RUN dotnet build "./TestConsole/TestConsole.csproj"
