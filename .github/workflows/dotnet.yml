@@ -39,4 +39,4 @@ jobs:
       run: dotnet test --no-build --verbosity normal
 
     - name: Build Docker Image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file ./TestConsole/Dockerfile --tag my-image-name:$(date +%s)
