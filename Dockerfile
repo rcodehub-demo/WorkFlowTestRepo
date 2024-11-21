@@ -4,6 +4,6 @@ WORKDIR /TestConsole
 # Copy everything
 #COPY *.csproj
 # Restore
-RUN dotnet restore
+RUN dotnet restore "TestConsole/TestConsole.csproj"
 # Build
-RUN dotnet build
+RUN dotnet build "TestConsole/TestConsole.csproj"
