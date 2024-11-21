@@ -1,11 +1,9 @@
-FROM amcr.microsoft.com/dotnet/sdk:8.0@sha256:35792ea4ad1db051981f62b313f1be3b46b1f45cadbaa3c288cd0d3056eefb83 AS build-env
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS build
 WORKDIR /TestConsole
 
 # Copy everything
-COPY . ./
+COPY *.csproj
 # Restore
 RUN dotnet restore
 # Build
 RUN dotnet build
-
-CMD ["dotnet", "TestConsole.dll"]
